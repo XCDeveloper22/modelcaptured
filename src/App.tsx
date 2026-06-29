@@ -28,7 +28,7 @@ const SplashScreen = ({ onComplete }: { onComplete: () => void, key?: string }) 
         >
           <img src="https://cdn.builder.io/api/v1/image/assets%2F9c74866fcfb14f7fbf68c14610585366%2F67a25810ea0b4bbb884977e79cc8e66a?format=webp&width=800&height=1200" alt="Model Captured Logo" className="w-32 h-32 md:w-48 md:h-48 object-contain" />
           <div className="flex flex-col items-center">
-            <div className="text-2xl md:text-4xl font-light tracking-[0.4em] uppercase leading-none text-gold">
+            <div className="text-lg sm:text-2xl md:text-4xl font-light tracking-[0.4em] uppercase leading-none text-gold">
               Model Captured
             </div>
             <motion.div 
@@ -37,11 +37,11 @@ const SplashScreen = ({ onComplete }: { onComplete: () => void, key?: string }) 
               transition={{ duration: 1.5, delay: 0.8, ease: "easeInOut" }}
               className="h-[1px] bg-gold/30 mt-6"
             />
-            <motion.span 
+            <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.5 }}
-              className="text-[9px] uppercase tracking-[0.6em] text-muted mt-4 font-medium"
+              className="text-[7px] sm:text-[9px] uppercase tracking-[0.6em] text-muted mt-4 font-medium"
             >
               Photography Studio
             </motion.span>
