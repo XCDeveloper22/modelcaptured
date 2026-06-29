@@ -273,10 +273,10 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-6xl font-extralight italic mb-8 leading-tight">
-              Capturing the <br/><span className="not-italic font-light">essence of form.</span>
+              MODEL CAPTURED
             </h1>
             <p className="text-sm text-muted leading-relaxed mb-10 max-w-sm">
-              Specializing in high-fashion editorial and cinematic portraiture. Our lens focuses on the intersection of light, movement, and the human story.
+              We specialize in fashion and portrait photography. We capture people using natural light, movement, and real moments to tell their stories.
             </p>
 
             <div className="border border-border-subtle bg-ink/40 p-4 mb-8 max-w-sm">
