@@ -350,7 +350,7 @@ const Gallery = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div>
             <span className="text-meta">Featured Collection</span>
-            <h2 className="text-4xl md:text-5xl font-extralight italic mt-4">Selected Works</h2>
+            <h2 className="text-4xl md:text-5xl font-extralight italic mt-4">Portfolio</h2>
           </div>
           
           <div className="flex flex-wrap gap-6">
@@ -483,7 +483,7 @@ const Services = () => {
     <section id="services" className="py-24 px-6 md:px-12 bg-surface">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col mb-20">
-          <span className="text-meta">Disciplines</span>
+          <span className="text-meta">Model Captured</span>
           <h2 className="text-4xl md:text-5xl font-extralight italic mt-4">Photography Services</h2>
         </div>
 
@@ -645,7 +645,7 @@ const Contact = () => {
           <div className="space-y-10">
             <div className="flex flex-col gap-2">
               <span className="text-[10px] text-muted uppercase tracking-widest">Office</span>
-              <p className="text-sm tracking-wide">Based in {BUSINESS_INFO.contact.location} / Available Worldwide</p>
+              <p className="text-sm tracking-wide">Model Captured</p>
             </div>
             <div className="flex flex-col gap-2">
               <span className="text-[10px] text-muted uppercase tracking-widest">Social</span>
@@ -653,8 +653,8 @@ const Contact = () => {
             </div>
             <div className="flex flex-col gap-6 pt-6 border-t border-border-subtle">
               <div>
-                <span className="text-[10px] text-muted uppercase tracking-widest">Download & Install</span>
-                <p className="text-[9px] text-muted mt-2">Available for desktop and mobile</p>
+                <span className="text-[10px] text-muted uppercase tracking-widest"></span>
+                <p className="text-[9px] text-muted mt-2"></p>
               </div>
               <div className="flex flex-col gap-3">
                 <button
@@ -723,7 +723,7 @@ const Contact = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-3">
-                <label className="text-[9px] uppercase tracking-[0.4em] text-muted font-bold">Your Identity</label>
+                <label className="text-[9px] uppercase tracking-[0.4em] text-muted font-bold">Full name</label>
                 <input 
                   type="text" 
                   name="name"
@@ -738,7 +738,7 @@ const Contact = () => {
                 {errors.name && <p className="text-[9px] text-red-500 uppercase tracking-widest">{errors.name}</p>}
               </div>
               <div className="space-y-3">
-                <label className="text-[9px] uppercase tracking-[0.4em] text-muted font-bold">Email Port</label>
+                <label className="text-[9px] uppercase tracking-[0.4em] text-muted font-bold">eMAIL aDDRESS</label>
                 <input 
                   type="email" 
                   name="email"
