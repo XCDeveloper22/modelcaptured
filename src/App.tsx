@@ -28,7 +28,7 @@ const SplashScreen = ({ onComplete }: { onComplete: () => void, key?: string }) 
         >
           <img src="https://cdn.builder.io/api/v1/image/assets%2F9c74866fcfb14f7fbf68c14610585366%2F67a25810ea0b4bbb884977e79cc8e66a?format=webp&width=800&height=1200" alt="Model Captured Logo" className="w-32 h-32 md:w-48 md:h-48 object-contain" />
           <div className="flex flex-col items-center">
-            <div className="text-2xl md:text-4xl font-light tracking-[0.4em] uppercase leading-none text-gold">
+            <div className="text-lg sm:text-2xl md:text-4xl font-light tracking-[0.4em] uppercase leading-none text-gold">
               Model Captured
             </div>
             <motion.div 
@@ -37,11 +37,11 @@ const SplashScreen = ({ onComplete }: { onComplete: () => void, key?: string }) 
               transition={{ duration: 1.5, delay: 0.8, ease: "easeInOut" }}
               className="h-[1px] bg-gold/30 mt-6"
             />
-            <motion.span 
+            <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.5 }}
-              className="text-[9px] uppercase tracking-[0.6em] text-muted mt-4 font-medium"
+              className="text-[7px] sm:text-[9px] uppercase tracking-[0.6em] text-muted mt-4 font-medium"
             >
               Photography Studio
             </motion.span>
@@ -265,7 +265,7 @@ const Hero = () => {
         </div>
 
         {/* Narrative & Contact */}
-        <div className="col-span-12 lg:col-span-5 flex flex-col justify-center order-1 lg:order-2 lg:pl-12"
+        <div className="col-span-12 lg:col-span-5 flex flex-col justify-center order-1 lg:order-2 lg:pl-12 text-center lg:text-left"
         >
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -273,10 +273,10 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-6xl font-extralight italic mb-8 leading-tight">
-              Capturing the <br/><span className="not-italic font-light">essence of form.</span>
+              MODEL CAPTURED
             </h1>
             <p className="text-sm text-muted leading-relaxed mb-10 max-w-sm">
-              Specializing in high-fashion editorial and cinematic portraiture. Our lens focuses on the intersection of light, movement, and the human story.
+              We specialize in fashion and portrait photography. We capture people using natural light, movement, and real moments to tell their stories.
             </p>
 
             <div className="border border-border-subtle bg-ink/40 p-4 mb-8 max-w-sm">
@@ -316,13 +316,13 @@ const Hero = () => {
   );
 };
 
-const Gallery = () => {
+const Gallery = ({ className = '' }: { className?: string }) => {
   const [filter, setFilter] = useState('All');
   const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
   const categories = ['All', 'Fashion', 'Portrait', 'Lifestyle'];
 
-  const filteredImages = filter === 'All' 
-    ? GALLERY_IMAGES 
+  const filteredImages = filter === 'All'
+    ? GALLERY_IMAGES
     : GALLERY_IMAGES.filter(img => img.category === filter);
 
   const navigateLightbox = useCallback((direction: 'next' | 'prev') => {
@@ -345,12 +345,12 @@ const Gallery = () => {
   }, [selectedIdx, navigateLightbox]);
 
   return (
-    <section id="gallery" className="py-24 px-6 md:px-12 bg-ink border-t border-border-subtle">
+    <section id="gallery" className={cn("py-24 px-6 md:px-12 bg-ink border-t border-border-subtle", className)}>
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div>
             <span className="text-meta">Featured Collection</span>
-            <h2 className="text-4xl md:text-5xl font-extralight italic mt-4">Selected Works</h2>
+            <h2 className="text-4xl md:text-5xl font-extralight italic mt-4">Portfolio</h2>
           </div>
           
           <div className="flex flex-wrap gap-6">
@@ -469,7 +469,7 @@ const Gallery = () => {
   );
 };
 
-const Services = () => {
+const Services = ({ className = '' }: { className?: string }) => {
   const [selectedService, setSelectedService] = useState<typeof BUSINESS_INFO.services[0] | null>(null);
 
   const icons = {
@@ -480,10 +480,10 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-24 px-6 md:px-12 bg-surface">
+    <section id="services" className={cn("py-24 px-6 md:px-12 bg-surface", className)}>
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col mb-20">
-          <span className="text-meta">Disciplines</span>
+          <span className="text-meta">Model Captured</span>
           <h2 className="text-4xl md:text-5xl font-extralight italic mt-4">Photography Services</h2>
         </div>
 
@@ -574,7 +574,7 @@ const Services = () => {
   );
 };
 
-const Contact = () => {
+const Contact = ({ className = '' }: { className?: string }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -636,27 +636,27 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-32 px-6 md:px-12 bg-ink">
+    <section id="contact" className={cn("py-32 px-6 md:px-12 bg-ink", className)}>
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
-        <div className="lg:col-span-5">
+        <div className="lg:col-span-5 text-center lg:text-left">
           <span className="text-meta">Inquiry</span>
           <h2 className="text-5xl font-extralight italic mt-6 mb-10 leading-tight">Begin the <br /><span className="not-italic">Collaboration</span></h2>
           
-          <div className="space-y-10">
-            <div className="flex flex-col gap-2">
+          <div className="space-y-10 flex flex-col items-center lg:items-start">
+            <div className="flex flex-col gap-2 w-full">
               <span className="text-[10px] text-muted uppercase tracking-widest">Office</span>
-              <p className="text-sm tracking-wide">Based in {BUSINESS_INFO.contact.location} / Available Worldwide</p>
+              <p className="text-sm tracking-wide">Model Captured</p>
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 items-center lg:items-start">
               <span className="text-[10px] text-muted uppercase tracking-widest">Social</span>
               <a href={BUSINESS_INFO.socials.facebook} className="text-sm tracking-wide hover:text-muted transition-colors border-b border-stone w-fit pb-1">Connect on Facebook</a>
             </div>
-            <div className="flex flex-col gap-6 pt-6 border-t border-border-subtle">
-              <div>
-                <span className="text-[10px] text-muted uppercase tracking-widest">Download & Install</span>
-                <p className="text-[9px] text-muted mt-2">Available for desktop and mobile</p>
+            <div className="flex flex-col gap-6 pt-6 border-t border-border-subtle w-full">
+              <div className="w-full">
+                <span className="text-[10px] text-muted uppercase tracking-widest"></span>
+                <p className="text-[9px] text-muted mt-2"></p>
               </div>
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-3 w-full">
                 <button
                   onClick={() => {
                     const userAgent = navigator.userAgent.toLowerCase();
@@ -723,7 +723,7 @@ const Contact = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-3">
-                <label className="text-[9px] uppercase tracking-[0.4em] text-muted font-bold">Your Identity</label>
+                <label className="text-[9px] uppercase tracking-[0.4em] text-muted font-bold">Full name</label>
                 <input 
                   type="text" 
                   name="name"
@@ -738,7 +738,7 @@ const Contact = () => {
                 {errors.name && <p className="text-[9px] text-red-500 uppercase tracking-widest">{errors.name}</p>}
               </div>
               <div className="space-y-3">
-                <label className="text-[9px] uppercase tracking-[0.4em] text-muted font-bold">Email Port</label>
+                <label className="text-[9px] uppercase tracking-[0.4em] text-muted font-bold">eMAIL aDDRESS</label>
                 <input 
                   type="email" 
                   name="email"
@@ -802,8 +802,8 @@ const Contact = () => {
 const Footer = () => {
   return (
     <footer className="py-16 border-t border-border-subtle px-6 md:px-12 bg-ink">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
-        <div className="flex flex-col">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+        <div className="flex flex-col items-center md:items-start text-center md:text-left">
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F9c74866fcfb14f7fbf68c14610585366%2F67a25810ea0b4bbb884977e79cc8e66a?format=webp&width=800&height=1200"
             alt="Model Captured"
@@ -812,12 +812,12 @@ const Footer = () => {
           <span className="text-[8px] uppercase tracking-[0.5em] text-muted font-medium">© {new Date().getFullYear()} / All Rights Reserved</span>
         </div>
         
-        <div className="flex gap-12">
-          <div className="flex flex-col gap-2">
+        <div className="flex gap-12 items-center md:items-start">
+          <div className="flex flex-col gap-2 items-center md:items-start">
             <span className="text-[8px] text-muted tracking-widest uppercase">Social</span>
             <a href={BUSINESS_INFO.socials.facebook} className="text-[9px] uppercase tracking-widest hover:text-muted">Facebook</a>
           </div>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 items-center md:items-start">
             <span className="text-[8px] text-muted tracking-widest uppercase">Inquiry</span>
             <span className="text-[9px] uppercase tracking-widest">Booking Open</span>
           </div>
@@ -853,14 +853,19 @@ const PageScroller = () => {
     }
   }, [location]);
 
+  const isMobileGallery = location.pathname === '/gallery';
+  const isMobileServices = location.pathname === '/services';
+  const isMobileContact = location.pathname === '/contact';
+  const isHome = location.pathname === '/home' || location.pathname === '/';
+
   return (
     <div className="min-h-screen text-white">
       <div id="home-top" className="absolute top-0" />
       <Navbar />
-      <Hero />
-      <Gallery />
-      <Services />
-      <Contact />
+      {isHome && <Hero />}
+      {(isHome || !isMobileServices && !isMobileContact) && <Gallery className={isMobileGallery ? '' : 'hidden md:block'} />}
+      {(isHome || !isMobileGallery && !isMobileContact) && <Services className={isMobileServices ? '' : 'hidden md:block'} />}
+      {(isHome || !isMobileGallery && !isMobileServices) && <Contact className={isMobileContact ? '' : 'hidden md:block'} />}
       <Footer />
     </div>
   );
