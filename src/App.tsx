@@ -802,8 +802,8 @@ const Contact = () => {
 const Footer = () => {
   return (
     <footer className="py-16 border-t border-border-subtle px-6 md:px-12 bg-ink">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
-        <div className="flex flex-col">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+        <div className="flex flex-col items-center md:items-start text-center md:text-left">
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F9c74866fcfb14f7fbf68c14610585366%2F67a25810ea0b4bbb884977e79cc8e66a?format=webp&width=800&height=1200"
             alt="Model Captured"
@@ -812,12 +812,12 @@ const Footer = () => {
           <span className="text-[8px] uppercase tracking-[0.5em] text-muted font-medium">© {new Date().getFullYear()} / All Rights Reserved</span>
         </div>
         
-        <div className="flex gap-12">
-          <div className="flex flex-col gap-2">
+        <div className="flex gap-12 items-center md:items-start">
+          <div className="flex flex-col gap-2 items-center md:items-start">
             <span className="text-[8px] text-muted tracking-widest uppercase">Social</span>
             <a href={BUSINESS_INFO.socials.facebook} className="text-[9px] uppercase tracking-widest hover:text-muted">Facebook</a>
           </div>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 items-center md:items-start">
             <span className="text-[8px] text-muted tracking-widest uppercase">Inquiry</span>
             <span className="text-[9px] uppercase tracking-widest">Booking Open</span>
           </div>
