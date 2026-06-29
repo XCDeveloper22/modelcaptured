@@ -1,0 +1,34 @@
+{
+  "name": "Model Captured",
+  "short_name": "Model Captured",
+  "description": "High-fashion editorial and cinematic portraiture studio. Capturing the essence of form.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#1a1a1a",
+  "background_color": "#1a1a1a",
+  "icons": [
+    {
+      "src": "https://cdn.builder.io/api/v1/image/assets%2F9c74866fcfb14f7fbf68c14610585366%2F67a25810ea0b4bbb884977e79cc8e66a?format=webp&width=192&height=192",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
+      "src": "https://cdn.builder.io/api/v1/image/assets%2F9c74866fcfb14f7fbf68c14610585366%2F67a25810ea0b4bbb884977e79cc8e66a?format=webp&width=512&height=512",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["photography"],
+  "screenshots": [
+    {
+      "src": "https://cdn.builder.io/api/v1/image/assets%2F9c74866fcfb14f7fbf68c14610585366%2F67a25810ea0b4bbb884977e79cc8e66a?format=webp&width=540&height=720",
+      "sizes": "540x720",
+      "type": "image/webp",
+      "form_factor": "narrow"
+    }
+  ]
+}
