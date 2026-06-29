@@ -265,7 +265,7 @@ const Hero = () => {
         </div>
 
         {/* Narrative & Contact */}
-        <div className="col-span-12 lg:col-span-5 flex flex-col justify-center order-1 lg:order-2 lg:pl-12"
+        <div className="col-span-12 lg:col-span-5 flex flex-col justify-center order-1 lg:order-2 lg:pl-12 text-center lg:text-left"
         >
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -638,25 +638,25 @@ const Contact = () => {
   return (
     <section id="contact" className="py-32 px-6 md:px-12 bg-ink">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
-        <div className="lg:col-span-5">
+        <div className="lg:col-span-5 text-center lg:text-left">
           <span className="text-meta">Inquiry</span>
           <h2 className="text-5xl font-extralight italic mt-6 mb-10 leading-tight">Begin the <br /><span className="not-italic">Collaboration</span></h2>
           
-          <div className="space-y-10">
-            <div className="flex flex-col gap-2">
+          <div className="space-y-10 flex flex-col items-center lg:items-start">
+            <div className="flex flex-col gap-2 w-full">
               <span className="text-[10px] text-muted uppercase tracking-widest">Office</span>
               <p className="text-sm tracking-wide">Model Captured</p>
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 items-center lg:items-start">
               <span className="text-[10px] text-muted uppercase tracking-widest">Social</span>
               <a href={BUSINESS_INFO.socials.facebook} className="text-sm tracking-wide hover:text-muted transition-colors border-b border-stone w-fit pb-1">Connect on Facebook</a>
             </div>
-            <div className="flex flex-col gap-6 pt-6 border-t border-border-subtle">
-              <div>
+            <div className="flex flex-col gap-6 pt-6 border-t border-border-subtle w-full">
+              <div className="w-full">
                 <span className="text-[10px] text-muted uppercase tracking-widest"></span>
                 <p className="text-[9px] text-muted mt-2"></p>
               </div>
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-3 w-full">
                 <button
                   onClick={() => {
                     const userAgent = navigator.userAgent.toLowerCase();
