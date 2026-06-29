@@ -316,13 +316,13 @@ const Hero = () => {
   );
 };
 
-const Gallery = () => {
+const Gallery = ({ className = '' }: { className?: string }) => {
   const [filter, setFilter] = useState('All');
   const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
   const categories = ['All', 'Fashion', 'Portrait', 'Lifestyle'];
 
-  const filteredImages = filter === 'All' 
-    ? GALLERY_IMAGES 
+  const filteredImages = filter === 'All'
+    ? GALLERY_IMAGES
     : GALLERY_IMAGES.filter(img => img.category === filter);
 
   const navigateLightbox = useCallback((direction: 'next' | 'prev') => {
@@ -345,7 +345,7 @@ const Gallery = () => {
   }, [selectedIdx, navigateLightbox]);
 
   return (
-    <section id="gallery" className="py-24 px-6 md:px-12 bg-ink border-t border-border-subtle">
+    <section id="gallery" className={cn("py-24 px-6 md:px-12 bg-ink border-t border-border-subtle", className)}>
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div>
@@ -469,7 +469,7 @@ const Gallery = () => {
   );
 };
 
-const Services = () => {
+const Services = ({ className = '' }: { className?: string }) => {
   const [selectedService, setSelectedService] = useState<typeof BUSINESS_INFO.services[0] | null>(null);
 
   const icons = {
@@ -480,7 +480,7 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-24 px-6 md:px-12 bg-surface">
+    <section id="services" className={cn("py-24 px-6 md:px-12 bg-surface", className)}>
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col mb-20">
           <span className="text-meta">Model Captured</span>
@@ -574,7 +574,7 @@ const Services = () => {
   );
 };
 
-const Contact = () => {
+const Contact = ({ className = '' }: { className?: string }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -636,7 +636,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-32 px-6 md:px-12 bg-ink">
+    <section id="contact" className={cn("py-32 px-6 md:px-12 bg-ink", className)}>
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
         <div className="lg:col-span-5 text-center lg:text-left">
           <span className="text-meta">Inquiry</span>
@@ -853,14 +853,19 @@ const PageScroller = () => {
     }
   }, [location]);
 
+  const isMobileGallery = location.pathname === '/gallery';
+  const isMobileServices = location.pathname === '/services';
+  const isMobileContact = location.pathname === '/contact';
+  const isHome = location.pathname === '/home' || location.pathname === '/';
+
   return (
     <div className="min-h-screen text-white">
       <div id="home-top" className="absolute top-0" />
       <Navbar />
-      <Hero />
-      <Gallery />
-      <Services />
-      <Contact />
+      {isHome && <Hero />}
+      {(isHome || !isMobileServices && !isMobileContact) && <Gallery className={isMobileGallery ? '' : 'hidden md:block'} />}
+      {(isHome || !isMobileGallery && !isMobileContact) && <Services className={isMobileServices ? '' : 'hidden md:block'} />}
+      {(isHome || !isMobileGallery && !isMobileServices) && <Contact className={isMobileContact ? '' : 'hidden md:block'} />}
       <Footer />
     </div>
   );
